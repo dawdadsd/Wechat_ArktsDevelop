@@ -12,13 +12,22 @@
 - 微信开发者工具
 ## 项目结构
 Wechat_ArktsDevelop/
+
 ├── entry/ # 入口模块
+
 │ ├── src/
+
 │ │ └── main/
+
 │ │ ├── ets/ # ArkTS 源码
+
 │ │ └── resources/ # 资源文件
+
+
 │ └── build.gradle
+
 ├── AppScope/ # 应用级配置
+
 └── build.gradle # 项目构建配置
 ## 快速开始
 1. 克隆仓库：
