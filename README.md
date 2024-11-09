@@ -12,7 +12,7 @@ WeChatArkTS是一个使用ArkTS开发的高仿微信项目，基于最新的API 
 - 联系人管理
 - 朋友圈
 - 小程序与小游戏集成
-- 多媒体内容分享
+- 朋友圈内容分享
 - 支付功能
 - 二维码扫描
 - 主题切换（明亮/暗黑模式）
@@ -20,51 +20,42 @@ WeChatArkTS是一个使用ArkTS开发的高仿微信项目，基于最新的API 
 - 设置与隐私控制
 
 ## 📸 应用截图
+
 <table>
   <tr>
-    <td><img src="Wechat_ArkTs/art/demo.png" width="200" alt="主界面"></td>
-    <td><img src="Wechat_ArkTs/art/demo1.png" width="200" alt="夜间模式"></td>
-    <td><img src="Wechat_ArkTs/art/demo2.png" width="200" alt="聊天界面1"></td>
+    <td><img src="Wechat_ArkTs/art/demo.png" width="150" alt="主界面"></td>
+    <td><img src="Wechat_ArkTs/art/demo1.png" width="150" alt="夜间模式"></td>
+    <td><img src="Wechat_ArkTs/art/demo2.png" width="150" alt="聊天界面1"></td>
+    <td><img src="Wechat_ArkTs/art/demo3.png" width="150" alt="聊天界面2"></td>
+    <td><img src="Wechat_ArkTs/art/demo4.png" width="150" alt="联系人列表"></td>
   </tr>
   <tr>
-    <td><img src="Wechat_ArkTs/art/demo3.png" width="200" alt="聊天界面2"></td>
-    <td><img src="Wechat_ArkTs/art/demo4.png" width="200" alt="联系人列表"></td>
-    <td><img src="Wechat_ArkTs/art/demo5.png" width="200" alt="朋友圈"></td>
+    <td><img src="Wechat_ArkTs/art/demo5.png" width="150" alt="朋友圈"></td>
+    <td><img src="Wechat_ArkTs/art/demo6.png" width="150" alt="发现页面"></td>
+    <td><img src="Wechat_ArkTs/art/demo7.png" width="150" alt="夜间模式菜单"></td>
+    <td><img src="Wechat_ArkTs/art/demo8.png" width="150" alt="设置页面"></td>
+    <td><img src="Wechat_ArkTs/art/demo9.png" width="150" alt="个人信息"></td>
   </tr>
   <tr>
-    <td><img src="Wechat_ArkTs/art/demo6.png" width="200" alt="发现页面"></td>
-    <td><img src="Wechat_ArkTs/art/demo7.png" width="200" alt="夜间模式菜单"></td>
-    <td><img src="Wechat_ArkTs/art/demo8.png" width="200" alt="设置页面"></td>
+    <td><img src="Wechat_ArkTs/art/demo10.png" width="150" alt="更多设置"></td>
+    <td><img src="Wechat_ArkTs/art/demo11.png" width="150" alt="联系人详情"></td>
+    <td><img src="Wechat_ArkTs/art/demo13.png" width="150" alt="朋友圈发布"></td>
+    <td><img src="Wechat_ArkTs/art/demo14.png" width="150" alt="支付页面"></td>
+    <td><img src="Wechat_ArkTs/art/demo15.png" width="150" alt="小程序列表"></td>
   </tr>
   <tr>
-    <td><img src="Wechat_ArkTs/art/demo9.png" width="200" alt="个人信息"></td>
-    <td><img src="Wechat_ArkTs/art/demo10.png" width="200" alt="更多设置"></td>
-    <td><img src="Wechat_ArkTs/art/demo11.png" width="200" alt="联系人详情"></td>
+    <td><img src="Wechat_ArkTs/art/demo16.png" width="150" alt="视频通话"></td>
+    <td><img src="Wechat_ArkTs/art/demo18.png" width="150" alt="群聊设置"></td>
+    <td><img src="Wechat_ArkTs/art/demo19.png" width="150" alt="扫一扫"></td>
+    <td><img src="Wechat_ArkTs/art/demo20.png" width="150" alt="语音输入"></td>
+    <td><img src="Wechat_ArkTs/art/demo21.png" width="150" alt="表情选择"></td>
   </tr>
   <tr>
-    <td><img src="Wechat_ArkTs/art/demo12.png" width="200" alt="搜索界面"></td>
-    <td><img src="Wechat_ArkTs/art/demo13.png" width="200" alt="朋友圈发布"></td>
-    <td><img src="Wechat_ArkTs/art/demo14.png" width="200" alt="支付页面"></td>
-  </tr>
-  <tr>
-    <td><img src="Wechat_ArkTs/art/demo15.png" width="200" alt="小程序列表"></td>
-    <td><img src="Wechat_ArkTs/art/demo16.png" width="200" alt="视频通话"></td>
-    <td><img src="Wechat_ArkTs/art/demo18.png" width="200" alt="群聊设置"></td>
-  </tr>
-  <tr>
-    <td><img src="Wechat_ArkTs/art/demo19.png" width="200" alt="扫一扫"></td>
-    <td><img src="Wechat_ArkTs/art/demo20.png" width="200" alt="语音输入"></td>
-    <td><img src="Wechat_ArkTs/art/demo21.png" width="200" alt="表情选择"></td>
-  </tr>
-  <tr>
-    <td><img src="Wechat_ArkTs/art/demo22.png" width="200" alt="位置分享"></td>
-    <td><img src="Wechat_ArkTs/art/demo23.png" width="200" alt="二维码名片"></td>
-    <td><img src="Wechat_ArkTs/art/demo24.png" width="200" alt="收藏页面"></td>
-  </tr>
-  <tr>
-    <td><img src="Wechat_ArkTs/art/demo25.png" width="200" alt="朋友圈动态"></td>
-    <td><img src="Wechat_ArkTs/art/demo26.png" width="200" alt="表情包商店"></td>
-    <td><img src="Wechat_ArkTs/art/demo27.png" width="200" alt="关于我们"></td>
+    <td><img src="Wechat_ArkTs/art/demo22.png" width="150" alt="位置分享"></td>
+    <td><img src="Wechat_ArkTs/art/demo23.png" width="150" alt="二维码名片"></td>
+    <td><img src="Wechat_ArkTs/art/demo24.png" width="150" alt="收藏页面"></td>
+    <td><img src="Wechat_ArkTs/art/demo25.png" width="150" alt="朋友圈动态"></td>
+    <td><img src="Wechat_ArkTs/art/demo26.png" width="150" alt="表情包商店"></td>
   </tr>
 </table>
 
