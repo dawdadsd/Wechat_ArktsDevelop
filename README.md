@@ -47,7 +47,8 @@ npm run build
 ![用户资料页面](art/demo1)
 
 ### 聊天界面
-![聊天界面](art/demo2)
+![演示1](Wechat_ArkTs/art/demo1.png)
+![演示2](Wechat_ArkTs/art/demo1.jpg)
 
 ## 贡献
 
