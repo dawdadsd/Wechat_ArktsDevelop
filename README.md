@@ -68,7 +68,7 @@ WeChatArkTS是一个使用ArkTS开发的高仿微信项目，基于最新的API 
 
 ## 🔧 安装
 
-1. 克隆仓库git clone https://github.com/yourusername/WeChatArkTS.git
+1. 克隆仓库git@github.com:dawdadsd/Wechat_ArktsDevelop.git
 2. 使用DevEco Studio打开项目
 3. 同步项目，安装依赖
 4. 选择模拟器或真机设备
