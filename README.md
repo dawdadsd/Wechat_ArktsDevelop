@@ -38,8 +38,16 @@ npm install
 4. 构建项目：
 npm run build
 5. 使用鸿蒙手机或则模拟器完成打开
-## demo示例
-![Screenshot](Wechat_ArkTS/art/demo)
+## 项目截图
+以下是我们项目的一些界面预览：
+### 主页
+![主页界面](art/demo)
+
+### 用户资料
+![用户资料页面](art/demo1)
+
+### 聊天界面
+![聊天界面](art/demo2)
 
 ## 贡献
 
