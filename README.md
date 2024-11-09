@@ -41,7 +41,7 @@ npm run build
 ## 项目截图
 以下是我们项目的一些界面预览：
 ### 主页
-![主页界面](art/demo)
+![主页界面](Wechat_ArkTs/art/demo)
 
 ### 用户资料
 ![用户资料页面](art/demo1)
