@@ -90,7 +90,7 @@ WeChatArkTS是一个使用ArkTS开发的高仿微信项目，基于最新的API 
 
 Your Name – 巫杰龙 – 1399092218@qq.com
 
-项目链接: [https://github.com/yourusername/WeChatArkTS](https://github.com/dawdadsd/Wechat_ArktsDevelop)
+项目链接: [https://github.com/dawdadsd/WeChatArkTS](https://github.com/dawdadsd/Wechat_ArktsDevelop)
 
 ## 🙏 致谢
 
