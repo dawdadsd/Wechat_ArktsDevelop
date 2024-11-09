@@ -39,7 +39,7 @@ npm install
 npm run build
 5. 使用鸿蒙手机或则模拟器完成打开
 ## demo示例
-![Screenshot]()
+![Screenshot](Wechat_ArkTS/art/demo)
 
 ## 贡献
 
