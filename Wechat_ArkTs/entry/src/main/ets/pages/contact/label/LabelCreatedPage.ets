@@ -1,13 +1,21 @@
 import { router } from '@kit.ArkUI'
+import StatusBarManager, { STATUS_BAR_HEIGHT } from '../../../utils/StatusBarManager';
 
 @Entry
 @Component
 struct LabelCreatedPage {
   @State labelName: string = '家人'
   @State memberCount: number = 0
+  @State statusBarHeight: number = 0
 
+  aboutToAppear() {
+    this.statusBarHeight = AppStorage.Get<number>(STATUS_BAR_HEIGHT) || 0;
+    StatusBarManager.immerseColor('#f1f1f1', false);
+  }
   build() {
     Column() {
+      Row().height(`${this.statusBarHeight}px`).width('100%').backgroundColor('#f1f1f1')
+
       // 顶部导航栏
       Row() {
         Image($r('app.media.ic_back'))
