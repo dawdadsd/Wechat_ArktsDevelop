@@ -22,7 +22,6 @@
     "pages/contact/label/LabelCreatedPage",
     "pages/MineProgramPage/MinProgramPage",
     "pages/MineProgramPage/PersonalCenterPage",
-    "pages/Music/MusicPage",
     "pages/Music/MusicPlayerDialog",
     "pages/mine/ServicePage",
     "pages/Game/CandyCrushGame",
@@ -32,6 +31,9 @@
     "pages/qrcode/ScanPage",
     "pages/search/AddFriden/AddFriendRequestPage",
     "pages/search/JayProfilePage",
-    "pages/mine/CardPage"
+    "pages/mine/CardPage",
+    "pages/chat/ChatSettingPage",
+    "pages/chat/ChatSearchPage",
+    "pages/chat/Video/video/videoPage"
   ]
 }

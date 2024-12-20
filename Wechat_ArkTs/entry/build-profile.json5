@@ -1,6 +1,7 @@
 {
   "apiType": 'stageMode',
   "buildOption": {
+
   },
   "targets": [
     {
@@ -10,5 +11,5 @@
     {
       "name": "ohosTest",
     }
-  ]
+  ],
 }

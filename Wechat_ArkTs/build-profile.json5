@@ -6,9 +6,9 @@
         "type": "HarmonyOS",
         "material": {
           "certpath": "C:\\Users\\xubei\\.ohos\\config\\default_Wechat_ArkTs_fO0IKVTROJXtY-jjiOikLmhwF9q6qMYTMZrira6y1eM=.cer",
-          "storePassword": "0000001B85546DD96959A16E9B32530CEC79992125B431CD4C83A9AE2C6ADD79692188B7154C00F21C71E2",
+          "storePassword": "0000001A1E12157CC38F2400FD1CCA287002E82A9DA59C60AD703531FD5B38C651AE9C14486BEC31359E",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BBBB3D6C96A3ABD8AFEF83C253900B99A87BC87122E06116B696D5846EAC04D4D701B8A6A57C067",
+          "keyPassword": "0000001A89A8E2936B3F9DE9307775729F991CB2A1717C80D61D9086E805EF2FBCA60F561FEA63CDCAAD",
           "profile": "C:\\Users\\xubei\\.ohos\\config\\default_Wechat_ArkTs_fO0IKVTROJXtY-jjiOikLmhwF9q6qMYTMZrira6y1eM=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\xubei\\.ohos\\config\\default_Wechat_ArkTs_fO0IKVTROJXtY-jjiOikLmhwF9q6qMYTMZrira6y1eM=.p12"

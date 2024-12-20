@@ -26,6 +26,22 @@ export default struct ListChatContentLeftItem {
             .padding(10)
             .backgroundColor("#FFFFFF")
             .borderRadius(10);
+        } else if (this.data?.msgType === 2) {
+          Image($r("app.media.ic_voice"))
+            .width(40)
+            .height(40)
+            .margin({ right: 10 })
+            .objectFit(ImageFit.Contain)
+            .onClick(() => {
+              // 点击播放录音消息
+            })
+        } else if (this.data?.msgType === 3) {
+          Text(this.data?.msg)
+            .fontSize(24)
+            .padding(10)
+            .backgroundColor("#a9ea7a")
+            .borderRadius(10)
+            .textAlign(TextAlign.End)
         }
       }
       .alignItems(HorizontalAlign.Start);

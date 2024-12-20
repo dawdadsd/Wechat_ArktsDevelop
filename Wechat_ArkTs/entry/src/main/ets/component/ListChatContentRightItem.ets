@@ -8,7 +8,7 @@ export default struct ListChatContentRightItem {
   build() {
     Row() {
       Column() {
-        if (this.data?.msgType == 0) {
+        if (this.data?.msgType === 0) {
           Text(this.data?.msg)
             .fontColor(Color.Black)
             .fontWeight(500)
@@ -16,7 +16,23 @@ export default struct ListChatContentRightItem {
             .padding(13.5)
             .borderRadius(4)
             .backgroundColor("#a9ea7a")
-        } else {
+        } else if (this.data?.msgType === 1) {
+          Text(this.data?.msg)
+            .fontSize(24)
+            .padding(10)
+            .backgroundColor("#a9ea7a")
+            .borderRadius(10)
+            .textAlign(TextAlign.End)
+        } else if (this.data?.msgType === 2) {
+          Image($r("app.media.ic_voice"))
+            .width(40)
+            .height(40)
+            .margin({ left: 10 })
+            .objectFit(ImageFit.Contain)
+            .onClick(() => {
+              // 点击播放录音消息
+            })
+        }else if(this.data?.msgType === 3){
           Text(this.data?.msg)
             .fontSize(24)
             .padding(10)

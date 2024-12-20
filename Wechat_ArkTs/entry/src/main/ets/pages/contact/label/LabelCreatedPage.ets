@@ -25,7 +25,7 @@ struct LabelCreatedPage {
     this.statusBarHeight = AppStorage.Get<number>(STATUS_BAR_HEIGHT) || 0;
     StatusBarManager.immerseColor('#f1f1f1', false);
 
-    // 获取从TagPage传递过来的标���名字
+    // 获取从TagPage传递过来的名字表示
     const params = router.getParams() as LabelCreatedPageParams;
     if (params.labelName) {
       this.labelName = params.labelName;
