@@ -3,6 +3,7 @@ export interface Friend {
   description: string;
   avatar: Resource;
   status: string;
+  isAdded : boolean;
 }
 
 export interface RouterParams {

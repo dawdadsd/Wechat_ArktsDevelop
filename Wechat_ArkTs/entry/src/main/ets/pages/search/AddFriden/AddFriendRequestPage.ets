@@ -63,7 +63,8 @@ struct AddFriendRequestPage {
             name: '不喝饮料', // 使用输入的备注或默认名称
             description: this.message, // 使用输入的申请消息
             avatar: $r('app.media.jay'), // 使用默认头像或其他适当的头像
-            status: '待同意'
+            status: '待同意',
+            isAdded:false
           }
 
           const params: RouterParams = {

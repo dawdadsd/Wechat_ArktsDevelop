@@ -131,6 +131,11 @@ export default struct Mine {
         title: "卡包",
         iconSrc: $r('app.media.ic_card_pkg')
       })
+        .onClick(()=>{
+          router.pushUrl(
+            {url:"pages/mine/CardPage"}
+          )
+          })
       Divider()
         .vertical(false)
         .color("#f3f3f3")

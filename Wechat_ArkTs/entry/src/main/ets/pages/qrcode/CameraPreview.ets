@@ -20,7 +20,7 @@ export struct CameraPreview {
         .height(200)
         .autoPlay(true)
 
-      Button("拍照或录像")
+      Button("上面是拍照，下面是录屏")
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
         .onClick(() => this.startCameraPicker())

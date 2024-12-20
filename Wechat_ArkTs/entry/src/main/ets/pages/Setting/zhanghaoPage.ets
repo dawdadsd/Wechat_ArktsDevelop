@@ -8,24 +8,33 @@ import { optionItem } from './optionItem'
 import router from '@ohos.router'
 import {  isback } from './navigationBar'
 import {  isnext } from './navigationBar'
+import StatusBarManager, { STATUS_BAR_HEIGHT } from '../../utils/StatusBarManager';
 
 @Entry
 @Component
 struct zhanghaoPage {
   private scroller: Scroller = new Scroller()
+  @State statusBarHeight: number = 0
 
+  aboutToAppear() {
+    this.statusBarHeight = AppStorage.Get<number>(STATUS_BAR_HEIGHT) || 0;
+    StatusBarManager.immerseColor('#f1f1f1', false);
+  }
   build() {
     Column() {
-
+      Row().height(`${this.statusBarHeight}px`).width('100%')
       /**
        * 功能列表
        */
       Scroll(this.scroller) {
         Column() {
-
+          Row().height(`${this.statusBarHeight}px`).width('100%')
+          Blank()
           Row() {
-
-              isback({ myUrl: "pages/Setting" })
+              Image($r('app.media.ic_back'))
+                .onClick(
+                  ()=>router.back()
+                )
               Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
               Text("账号与安全")
                 .fontSize(20)

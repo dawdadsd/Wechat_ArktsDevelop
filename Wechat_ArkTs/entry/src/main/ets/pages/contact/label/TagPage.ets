@@ -89,7 +89,7 @@ struct ContactLabelPage {
   }
 }
 
-// NewLabelPopup 组件保持不变
+// NewLabelPopup 组件保持不��
 
 // NewLabelPopup 组件保持不变
 @Component

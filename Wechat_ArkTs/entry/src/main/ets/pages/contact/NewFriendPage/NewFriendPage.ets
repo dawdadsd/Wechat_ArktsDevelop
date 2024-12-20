@@ -9,34 +9,32 @@ struct NewFriendsPage {
   @State searchText: string = ''
   @State friends: Friend[] = [
     {
-      name: '不喝饮料',
-      description: '我是你',
-      avatar: $r('app.media.jay'),
-      status: '已添加'
-    },
-    {
       name: '黄靖妮',
       description: '我是群聊"移动应用go! go..."',
       avatar: $r('app.media.huangjingni'),
-      status: '已添加'
+      status: '待同意',
+      isAdded:true
     },
     {
       name: '莫三妹',
       description: '我是群聊"移动应用go! go..."',
       avatar: $r('app.media.mosanmei'),
-      status: '待同意'
+      status: '待同意',
+      isAdded:false
     },
     {
       name: '许宝梅',
       description: '我是群聊"移动应用go! go..."',
       avatar: $r('app.media.xubaomei'),
-      status: '已添加'
+      status: '待同意',
+      isAdded:true
     },
     {
       name: '马菊',
       description: '我是群聊"移动应用go! go..."',
       avatar: $r('app.media.maju'),
-      status: '已添加'
+      status: '待同意',
+      isAdded:true
     }
   ]
   @State statusBarHeight: number = 0
@@ -79,9 +77,7 @@ struct NewFriendsPage {
           .width(24)
           .height(24)
           .onClick(() => {
-            router.pushUrl({
-              url: "pages/Index"
-            })
+            router.back()
           })
         Text('新的朋友')
           .fontSize(16)
@@ -168,22 +164,24 @@ struct NewFriendsPage {
               .alignItems(HorizontalAlign.Start)
               .layoutWeight(1)
               .margin({ left: 12 })
-              if (friend.status === '待同意') {
-                Button('同意')
+              //改成isAdded状态控制了，因为要用按钮之类的
+              if (!friend.isAdded) {
+                Button('添加')
                   .fontSize(14)
                   .backgroundColor('#1AAD19')
                   .height(30)
                   .width(60)
                   .onClick(() => {
-                    this.friends[index].status = '已添加';
+                    this.friends[index].isAdded = true;
                     this.friends = [...this.friends]; // 触发更新
+
                     Prompt.showToast({
-                      message:'已添加好友',
+                      message:'添加成功',
                       duration:2000
                     })
                   })
               } else {
-                Text(friend.status)
+                Text('已添加')
                   .fontSize(14)
                   .fontColor('#999999')
               }

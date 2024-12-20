@@ -2,15 +2,24 @@
 @Component
 @Preview
 export default struct ChatFunctionBar {
+  private onImageSelected?:()=>void
+  private onCameraSelected?:()=>void
+
   build() {
     Grid() {//网格布局,最多放4个图标，布局方向一行一列
       GridItem() {
         this.createMenu($r("app.media.ic_camera"), "相册")
       }
+      .onClick(()=>{
+        this.onImageSelected?.();
+      })
 
       GridItem() {
         this.createMenu($r("app.media.ic_shoot"), "拍摄")
       }
+      .onClick(()=>{
+        this.onCameraSelected?.();
+      })
 
       GridItem() {
         this.createMenu($r("app.media.ic_voice_call"), "语音通话")

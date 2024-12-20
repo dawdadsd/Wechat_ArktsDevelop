@@ -1,12 +1,21 @@
 import router from '@ohos.router';
+import StatusBarManager, { STATUS_BAR_HEIGHT } from '../../utils/StatusBarManager';
 
 @Entry
 @Component
 struct ServicePage {
   @State balance: string = '5678.2'
+  @State statusBarHeight: number = 0
+
+  aboutToAppear() {
+    this.statusBarHeight = AppStorage.Get<number>(STATUS_BAR_HEIGHT) || 0;
+    StatusBarManager.immerseColor('#f1f1f1', false);
+  }
 
   build() {
     Column() {
+      Row().height(`${this.statusBarHeight}px`).width('100%')
+      Blank()
       // 顶部导航栏
       Row() {
         Image($r('app.media.ic_back'))

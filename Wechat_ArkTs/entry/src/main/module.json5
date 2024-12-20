@@ -10,6 +10,16 @@
       "tablet"
     ],
     "requestPermissions": [
+      {
+        "name" : "ohos.permission.MICROPHONE",
+        "reason": "$string:net_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
 
       {
         "name": "ohos.permission.INTERNET",
@@ -28,7 +38,7 @@
           "abilities": [
             "EntryAbility"
           ],
-          "when": "always"
+          "when": "inuse"
         }
       },
       {

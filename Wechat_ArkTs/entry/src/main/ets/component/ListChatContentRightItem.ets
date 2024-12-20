@@ -17,11 +17,12 @@ export default struct ListChatContentRightItem {
             .borderRadius(4)
             .backgroundColor("#a9ea7a")
         } else {
-          Image(this.data?.img)
-            .width(150)
-            .borderRadius(4)
-            .objectFit(ImageFit.Auto)
+          Text(this.data?.msg)
+            .fontSize(24)
+            .padding(10)
             .backgroundColor("#a9ea7a")
+            .borderRadius(10)
+            .textAlign(TextAlign.End)
         }
       }
       .margin({ left: 80 })
@@ -37,9 +38,9 @@ export default struct ListChatContentRightItem {
         .strokeWidth(0)
 
       Image(this.data?.headSrc)
-        .width(48)
-        .height(48)
-        .borderRadius(4)
+        .width(40)
+        .height(40)
+        .borderRadius(20)
         .margin({ left: 8, right: 20 })
         .objectFit(ImageFit.Cover)
 

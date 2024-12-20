@@ -1,55 +1,44 @@
-
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 @Entry
 @Component
 struct LoginPage{
-  //@State verificationCode: string = "获取验证码"
   @State account :string = ''
   @State password :string =''
-  @State isCountingDown:boolean = false
-  @State Countdown:number=60
-  private intervalID:number = 0
   @State isPasswordVisible: boolean = false
-  //倒计时开始函数
-  /*startCountDown(){
-    if (this.isCountingDown){
-      // 重复提交时弹出
-      promptAction.showToast({
-        message:'提交过于频繁',
-        duration: 2000,
-      })
-      return
-    }
-    //准备开始阶段，把倒计时开关打开
-    this.isCountingDown = true
-    this.Countdown = 60;
-    //开始倒计时
-    this.intervalID = setInterval(() => {
-      if (this.Countdown > 0) {
-        this.Countdown--;
-        this.verificationCode = `${this.Countdown}s后重新获取`;
-      } else {
+  private correctPassword: string = '123456'; // 正确的密码
+  @State isAccountFrozen: boolean = false;
 
-      }
-    }, 1000);
-    //强制倒计时结束，当超过60s时自动停止
-    setTimeout(()=>{
-      this.stopCountdown()
-    },60000)
-  }
-  //倒计时停止函数
-  stopCountdown(){
-    if(this.intervalID){
-      clearInterval(this.intervalID)
-    }
-    //把倒计时重置
-    this.isCountingDown = false
-    this.verificationCode = "获取验证码"
-  }*/
   togglePasswordVisibility(){
     this.isPasswordVisible = !this.isPasswordVisible
   }
+
+  // 密码识别
+  verifyPassword() {
+    if (this.isAccountFrozen) {
+      promptAction.showToast({
+        message: '账号已冻结,无法登录',
+        duration: 2000,
+      });
+      return false;
+    }
+    if (this.account !== 'jay') {
+      promptAction.showToast({
+        message: '账号或密码错误',
+        duration: 2000,
+      });
+      return false;
+    }
+    if (this.password !== this.correctPassword) {
+      promptAction.showToast({
+        message: '账号或密码错误',
+        duration: 2000,
+      });
+      return false;
+    }
+    return true;
+  }
+
   build() {
     Column() {
       Image($r('app.media.jay'))
@@ -61,6 +50,26 @@ struct LoginPage{
         .fontWeight(FontWeight.Bold)
         .margin({ bottom: 40 })
       Row() {
+        Text("账号")
+          .fontSize(16)
+          .fontWeight(FontWeight.Bold)
+          .margin({ right: 10 })
+        TextInput({ placeholder: "请填写账号" })
+          .width('50%')
+          .height(44)
+          .backgroundColor(Color.White)
+          .margin({ right: 10 })
+          .onChange((value: string) => {
+            this.account = value
+          })
+      }
+      .width('90%')
+      .padding(10)
+      .backgroundColor(Color.White)
+      .borderRadius(8)
+      .margin({ bottom: 10 })
+
+      Row() {
         Text("密码")
           .fontSize(16)
           .fontWeight(FontWeight.Bold)
@@ -71,15 +80,8 @@ struct LoginPage{
           .backgroundColor(Color.White)
           .margin({ right: 10 })
           .onChange((value: string) => {
-            this.account = value})
-
-        /*Button(this.verificationCode)
-          .width('30%')
-          .height(44)
-          .backgroundColor(Color.White)
-          .fontColor("#07C160")
-          .borderRadius(0)
-          .onClick(()=>this.startCountDown())*/
+            this.password = value
+          })
       }
       .width('90%')
       .padding(10)
@@ -106,11 +108,12 @@ struct LoginPage{
         .height(44)
         .backgroundColor("#07C160")
         .fontColor(Color.White)
-          // 在Login页面中
         .onClick(() => {
-          router.pushUrl({
-            url: 'pages/Index'
-          })
+          if (this.verifyPassword()) {
+            router.pushUrl({
+              url: 'pages/Index'
+            });
+          }
         })
 
       Blank()
@@ -119,10 +122,23 @@ struct LoginPage{
         Text("找回密码")
           .fontColor("#576B95")
           .fontSize(14)
+          .onClick(() => {
+            promptAction.showToast({
+              message: '密码已找回,密码是123456',
+              duration: 2000,
+            });
+          })
         Text("紧急冻结")
           .fontColor("#576B95")
           .fontSize(14)
           .margin({ left: 20, right: 20 })
+          .onClick(() => {
+            this.isAccountFrozen = true;
+            promptAction.showToast({
+              message: '账号已冻结',
+              duration: 2000,
+            });
+          })
         Text("更多")
           .fontColor("#576B95")
           .fontSize(14)

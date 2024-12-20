@@ -22,7 +22,11 @@ struct LoginPage{
   @State isCountingDown:boolean = false
   @State Countdown:number=60
   private intervalID:number = 0
-      //倒计时开始函数
+  private correctVerificationCode: string = '';
+  @State showVerificationCodeDialog: boolean = false;
+  @State isAccountFrozen: boolean = false;
+
+  //倒计时开始函数
   startCountDown(){
     if (this.isCountingDown){
       // 重复提交时弹出
@@ -48,16 +52,50 @@ struct LoginPage{
     setTimeout(()=>{
       this.stopCountdown()
     },60000)
+
+    // 生成随机的5位验证码
+    this.correctVerificationCode = Math.floor(Math.random() * 90000 + 10000).toString();
+    // 3秒后弹出验证码弹窗
+    setTimeout(() => {
+      this.showVerificationCodeDialog = true;
+    }, 3000);
   }
-    //倒计时停止函数
+  //倒计时停止函数
   stopCountdown(){
-  if(this.intervalID){
-    clearInterval(this.intervalID)
-  }
-  //把倒计时重置
-  this.isCountingDown = false
+    if(this.intervalID){
+      clearInterval(this.intervalID)
+    }
+    //把倒计时重置
+    this.isCountingDown = false
     this.verificationCode = "获取验证码"
   }
+
+  // 验证码识别
+  verifyCode() {
+    if (this.isAccountFrozen) {
+      promptAction.showToast({
+        message: '账号已冻结,无法登录',
+        duration: 2000,
+      });
+      return false;
+    }
+    if (this.account !== 'jay') {
+      promptAction.showToast({
+        message: '账号错误',
+        duration: 2000,
+      });
+      return false;
+    }
+    if (this.password !== this.correctVerificationCode) {
+      promptAction.showToast({
+        message: '验证码错误',
+        duration: 2000,
+      });
+      return false;
+    }
+    return true;
+  }
+
   build() {
     Column() {
       Image($r('app.media.jay'))
@@ -69,6 +107,25 @@ struct LoginPage{
         .fontWeight(FontWeight.Bold)
         .margin({ bottom: 40 })
       Row() {
+        Text("账号")
+          .fontSize(16)
+          .fontWeight(FontWeight.Bold)
+          .margin({ right: 10 })
+        TextInput({ placeholder: "请填写账号" })
+          .width('50%')
+          .height(44)
+          .backgroundColor(Color.White)
+          .margin({ right: 10 })
+          .onChange((value: string) => {
+            this.account = value
+          })
+      }
+      .width('90%')
+      .padding(10)
+      .backgroundColor(Color.White)
+      .borderRadius(8)
+      .margin({ bottom: 10 })
+      Row() {
         Text("验证码")
           .fontSize(16)
           .fontWeight(FontWeight.Bold)
@@ -79,7 +136,8 @@ struct LoginPage{
           .backgroundColor(Color.White)
           .margin({ right: 10 })
           .onChange((value: string) => {
-            this.account = value})
+            this.password = value
+          })
         Button(this.verificationCode)
           .width('30%')
           .height(44)
@@ -108,11 +166,12 @@ struct LoginPage{
       })
       Button("登录")
         .commonButtonStyle()
-          // 在Login页面中
         .onClick(() => {
-          router.pushUrl({
-            url: 'pages/Index'
-          })
+          if (this.verifyCode()) {
+            router.pushUrl({
+              url: 'pages/Index'
+            });
+          }
         })
 
       Blank()
@@ -121,10 +180,23 @@ struct LoginPage{
         Text("找回密码")
           .fontColor("#576B95")
           .fontSize(14)
+          .onClick(() => {
+            promptAction.showToast({
+              message: '密码已找回,密码是654321',
+              duration: 2000,
+            });
+          })
         Text("紧急冻结")
           .fontColor("#576B95")
           .fontSize(14)
           .margin({ left: 20, right: 20 })
+          .onClick(() => {
+            this.isAccountFrozen = true;
+            promptAction.showToast({
+              message: '账号已冻结',
+              duration: 2000,
+            });
+          })
         Text("更多")
           .fontColor("#576B95")
           .fontSize(14)
@@ -132,6 +204,31 @@ struct LoginPage{
       .width('90%')
       .justifyContent(FlexAlign.Center)
       .margin({ bottom: 20 })
+
+      if (this.showVerificationCodeDialog) {
+        Column() {
+          Text(`你的验证码是: ${this.correctVerificationCode}`)
+            .fontSize(18)
+            .margin({ bottom: 20 })
+          Row() {
+            Button("确认")
+              .onClick(() => {
+                this.password = this.correctVerificationCode;
+                this.showVerificationCodeDialog = false;
+              })
+            Button("x")
+              .onClick(() => {
+                this.showVerificationCodeDialog = false;
+              })
+          }
+        }
+        .width(200)
+        .height(100)
+        .backgroundColor(Color.White)
+        .border({ color: Color.Black, width: 1 })
+        .padding(10)
+        .position({ x: 20, y: 20 })
+      }
     }
     .width('100%')
     .height('100%')

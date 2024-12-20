@@ -1,5 +1,7 @@
 import router from '@ohos.router';
 import {CreateMomentPage} from  './CreateMomentPage'
+import StatusBarManager, { STATUS_BAR_HEIGHT } from '../../utils/StatusBarManager';
+
 import { MomentDataItem, RouterParams } from './types';
 interface GeneratedTypeLiteralInterface_1 {
   newMoment?: Partial<MomentDataItem>;
@@ -9,6 +11,9 @@ interface GeneratedTypeLiteralInterface_1 {
 @Component
 struct MomentPage {
   @State currentIndex: number = 0;
+  @State statusBarHeight: number = 0
+
+
   @State momentData: MomentDataItem[] = [
     {
       headSrc: $r('app.media.huangjingni'),
@@ -28,6 +33,8 @@ struct MomentPage {
 
   aboutToAppear() {
     this.updateMomentData();
+    this.statusBarHeight = AppStorage.Get<number>(STATUS_BAR_HEIGHT) || 0;
+    StatusBarManager.immerseColor('#f1f1f1', false);
   }
   onPageShow() {
     console.info('MomentPage onPageShow');
@@ -61,6 +68,7 @@ struct MomentPage {
 
   build() {
     Column() {
+      Row().height(`${this.statusBarHeight}px`).width('100%')
       Stack({ alignContent: Alignment.Top }) {
         Image($r('app.media.simple_Make'))
           .width('100%')

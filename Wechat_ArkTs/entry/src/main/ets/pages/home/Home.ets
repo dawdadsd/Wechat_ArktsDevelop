@@ -139,7 +139,7 @@ export default struct Home {
       // 弹出菜单
       if (this.isMenuVisible) {
         Column() {
-          this.menuItem('发起群聊', $r('app.media.foreground'),' pages/contact/GroupChatPage')
+          this.menuItem('发起群聊', $r('app.media.foreground'),'pages/contact/label/TagPage')
           this.menuItem('添加朋友', $r('app.media.ic_user_head7'),'pages/contact/NewFriendPage/NewFriendPage')
           this.menuItem('扫一扫', $r('app.media.ic_add'), 'pages/qrcode/ScanPage')
           this.menuItem('收付款', $r('app.media.ic_user_head6'), 'pages/payment/Payment')
@@ -192,7 +192,7 @@ export default struct Home {
   navigateTo(url: string) {
     this.isMenuVisible = false
     switch (url) {
-      case 'pages/contact/GroupChatPage':
+      case 'pages/contact/label/TagPage':
         this.navigateToCreateGroup()
         break
       case 'pages/contact/NewFriendPage/NewFriendPage':
@@ -211,7 +211,7 @@ export default struct Home {
   }
 
   private navigateToCreateGroup() {
-    router.pushUrl({ url: 'pages/contact/GroupChatPage'})
+    router.pushUrl({ url: 'pages/contact/label/TagPage'})
   }
 
   private navigateToAddFriend() {
