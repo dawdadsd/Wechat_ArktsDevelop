@@ -87,8 +87,7 @@ WeChatArkTS是一个使用ArkTS开发的高仿微信项目，基于最新的API 
 本项目仅用于学习和研究目的，不得用于商业用途。所有设计元素和功能模仿均基于对原版微信的致敬，相关权益属于腾讯公司。
 
 ## 👨‍💻 作者
-
-Your Name – 巫杰龙 – 1399092218@qq.com
+巫杰龙 – 1399092218@qq.com
 
 项目链接: [https://github.com/dawdadsd/WeChatArkTS](https://github.com/dawdadsd/Wechat_ArktsDevelop)
 
